@@ -1,0 +1,20 @@
+function iris
+
+fileID = fopen('iris.txt','r');
+
+A = zeros(150, 4);
+B = zeros(150, 1);
+
+%{
+tline = fgetl(fileID);
+while ischar(tline)
+    disp(tline)
+    tline = fgetl(fileID);
+%}
+for x = 1:150
+    tline = fgetl(fileID);
+end
+fclose(fileID);
+x=tline(1:3)
+%y=tline[5];
+end
