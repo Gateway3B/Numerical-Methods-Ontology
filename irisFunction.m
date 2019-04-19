@@ -20,4 +20,93 @@ for x = 1:150
     end
 end
 fclose(fileID);
+%%loading done
+
+setosaTrainingX = zeros(25, 4);
+setosaTrainingY = zeros(25, 3);
+counter = 1;
+for x = 1 : 25
+    setosaTrainingX(counter,:) = A(x,:);
+    setosaTrainingY(counter,:) = B(x,:);
+    counter = counter + 1;
+end
+counter = 1;
+%50 percent for training
+setosaTestingX = zeros(20, 4);
+setosaTestingY = zeros(20, 3);
+for x = 26 : 45
+    setosaTestingX(counter,:) = A(x,:);
+    setosaTestingY(counter,:) = B(x,:);
+    counter = counter + 1;
+end
+counter = 1;
+%40 percent for testing
+setosaCrossValidationX = zeros(5, 4);
+setosaCrossValidationY = zeros(5, 3);
+for x = 46 : 50
+    setosaCrossValidationX(counter,:) = A(x,:);
+    setosaCrossValidationY(counter,:) = B(x,:);
+    counter = counter + 1;
+end
+%10 percent for cross-validation
+%setosa done
+counter = 1;
+
+versicolorTrainingX = zeros(25, 4);
+versicolorTrainingY = zeros(25, 3);
+for x = 1 : 25
+    versicolorTrainingX(counter,:) = A(x + 50,:);
+    versicolorTrainingY(counter,:) = B(x + 50,:);
+    counter = counter + 1;
+end
+counter = 1;
+%50 percent for training
+versicolorTestingX = zeros(20, 4);
+versicolorTestingY = zeros(20, 3);
+for x = 26 : 45
+    versicolorTestingX(counter,:) = A(x + 50,:);
+    versicolorTestingY(counter,:) = B(x + 50,:);
+    counter = counter + 1;
+end
+counter = 1;
+%40 percent for testing
+versicolorCrossValidationX = zeros(5, 4);
+versicolorCrossValidationY = zeros(5, 3);
+for x = 46 : 50
+    versicolorCrossValidationX(counter,:) = A(x + 50,:);
+    versicolorCrossValidationY(counter,:) = B(x + 50,:);
+    counter = counter + 1;
+end
+%10 percent for cross-validation
+%versicolor done
+counter = 1;
+
+virginicaTrainingX = zeros(25, 4);
+virginicaTrainingY = zeros(25, 3);
+for x = 1 : 25
+    virginicaTrainingX(counter,:) = A(x + 100,:);
+    virginicaTrainingY(counter,:) = B(x + 100,:);
+    counter = counter + 1;
+end
+counter = 1;
+%50 percent for training
+virginicaTestingX = zeros(20, 4);
+virginicaTestingY = zeros(20, 3);
+for x = 26 : 45
+    virginicaTestingX(counter,:) = A(x + 100,:);
+    virginicaTestingY(counter,:) = B(x + 100,:);
+    counter = counter + 1;
+end
+counter = 1;
+%40 percent for testing
+virginicaCrossValidationX = zeros(5, 4);
+virginicaCrossValidationY = zeros(5, 3);
+for x = 46 : 50
+    virginicaCrossValidationX(counter,:) = A(x + 100,:);
+    virginicaCrossValidationY(counter,:) = B(x + 100,:);
+    counter = counter + 1;
+end
+%10 percent for cross-validation
+%virginica done
+
 end
