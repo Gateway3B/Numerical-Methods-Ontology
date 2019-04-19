@@ -24,78 +24,78 @@ function wine
     %1 - 59: 29 for training, 24 for testing, 6 for cross-validation
     %2 - 71: 35 for training, 29 for testing, 7 for cross-validation
     %3 - 48: 24 for training, 19 for testing, 5 for cross-validation
-    1TrainingX = zeros(29, 13);
-    1TrainingY = zeros(29, 3);
-    1TestingX = zeros(24, 13);
-    1TestingY = zeros(24, 3);
-    1CrossValidationX = zeros(6, 13);
-    1CrossValidationY = zeros(6, 3);
+    TrainingX1 = zeros(29, 13);
+    TrainingY1 = zeros(29, 3);
+    TestingX1 = zeros(24, 13);
+    TestingY1 = zeros(24, 3);
+    CrossValidationX1 = zeros(6, 13);
+    CrossValidationY1 = zeros(6, 3);
     counter = 1;
     for x = 1:29
-        1TrainingX(counter,:) = A(x,:);
-        1TrainingY(counter,:) = B(x,:);
+        TrainingX1(counter,:) = A(x,:);
+        TrainingY1(counter,:) = B(x,:);
         counter = counter + 1;
     end
     counter = 1;
     for x = 30:53
-        1TestingX(counter,:) = A(x,:);
-        1TestingY(counter,:) = B(x,:);
+        TestingX1(counter,:) = A(x,:);
+        TestingY1(counter,:) = B(x,:);
         counter = counter + 1;
     end
     counter = 1;
     for x = 54:59
-        1CrossValidationX(counter,:) = A(x,:);
-        1CrossValidationY(counter,:) = B(x,:);
+        CrossValidationX1(counter,:) = A(x,:);
+        CrossValidationY1(counter,:) = B(x,:);
         counter = counter + 1;
     end
 
     counter = 1;
-    2TrainingX = zeros(35, 13);
-    2TrainingY = zeros(35, 3);
-    2TestingX = zeros(29, 13);
-    2TestingY = zeros(29, 3);
-    2CrossValidationX = zeros(7, 13);
-    2CrossValidationY = zeros(7, 3);
+    TrainingX2 = zeros(35, 13);
+    TrainingY2 = zeros(35, 3);
+    TestingX2 = zeros(29, 13);
+    TestingY2 = zeros(29, 3);
+    CrossValidationX2 = zeros(7, 13);
+    CrossValidationY2 = zeros(7, 3);
     for x = 60:94
-        2TrainingX(counter,:) = A(x + 59,:);
-        2TrainingY(counter,:) = B(x + 59,:);
+        TrainingX2(counter,:) = A(x,:);
+        TrainingY2(counter,:) = B(x,:);
         counter = counter + 1;
     end
     counter = 1;
     for x = 95:123
-        2TestingX(counter,:) = A(x + 59,:);
-        2TestingY(counter,:) = B(x + 59,:);
+        TestingX2(counter,:) = A(x,:);
+        TestingY2(counter,:) = B(x,:);
         counter = counter + 1;
     end
     counter = 1;
     for x = 124:130
-        2CrossValidationX(counter,:) = A(x + 59,:);
-        2CrossValidationY(counter,:) = B(x + 59,:);
+        CrossValidationX2(counter,:) = A(x,:);
+        CrossValidationY2(counter,:) = B(x,:);
         counter = counter + 1;
     end
 
     counter = 1;
-    3TrainingX = zeros(24, 13);
-    3TrainingY = zeros(24, 3);
-    3TestingX = zeros(19, 13);
-    3TestingY = zeros(19, 3);
-    3CrossValidationX = zeros(5, 13);
-    3CrossValidationY = zeros(5, 3);
+    TrainingX3 = zeros(24, 13);
+    TrainingY3 = zeros(24, 3);
+    TestingX3 = zeros(19, 13);
+    TestingY3 = zeros(19, 3);
+    CrossValidationX3 = zeros(5, 13);
+    CrossValidationY3 = zeros(5, 3);
     for x = 131:154
-        3TrainingX(counter,:) = A(x + 59 + 71,:);
-        3TrainingY(counter,:) = B(x + 59 + 71,:);
+        TrainingX3(counter,:) = A(x,:);
+        TrainingY3(counter,:) = B(x,:);
         counter = counter + 1;
     end
     counter = 1;
     for x = 155:173
-        3TestingX(counter,:) = A(x + 59 + 71,:);
-        3TestingY(counter,:) = B(x + 59 + 71,:);
+        TestingX3(counter,:) = A(x,:);
+        TestingY3(counter,:) = B(x,:);
         counter = counter + 1;
     end
     counter = 1;
     for x = 174:178
-        3CrossValidationX(counter,:) = A(x + 59 + 71,:);
-        3CrossValidationY(counter,:) = B(x + 59 + 71,:);
+        CrossValidationX3(counter,:) = A(x,:);
+        CrossValidationY3(counter,:) = B(x,:);
         counter = counter + 1;
     end
 end
