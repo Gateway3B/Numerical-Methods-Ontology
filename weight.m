@@ -1,5 +1,4 @@
-function w = weight(x, y)
-    lambda = 0;
+function w = weight(x, y, lambda)
     sum1, sum2 = zeros(size(x,1), size(x,2));
 
     for i = 1:size(x,1)
