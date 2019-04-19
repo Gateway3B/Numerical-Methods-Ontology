@@ -1,4 +1,4 @@
-function iris
+function [trainingX, trainingY, testingX, testingY, crossX, crossY] = iris()
 
 fileID = fopen('iris.txt','r');
 
@@ -108,5 +108,15 @@ for x = 46 : 50
 end
 %10 percent for cross-validation
 %virginica done
+
+trainingX = cat(1, cat(1, setosaTrainingX, virginicaTrainingX), versicolorTrainingX);
+trainingY = cat(1, cat(1, setosaTrainingY, virginicaTrainingY), versicolorTrainingY);
+
+testingX = cat(1, cat(1, setosaTestingX, virginicaTestingX), versicolorTestingX);
+testingY = cat(1, cat(1, setosaTestingY, virginicaTestingY), versicolorTestingY);
+
+crossX = cat(1, cat(1, setosaCrossValidationX, virginicaCrossValidationX), versicolorCrossValidationX);
+crossY = cat(1, cat(1, setosaCrossValidationY, virginicaCrossValidationY), virginicaCrossValidationY);
+
 
 end
