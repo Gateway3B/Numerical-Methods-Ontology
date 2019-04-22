@@ -1,6 +1,6 @@
-function [trainingX, trainingY, testingX, testingY, crossX, crossY] = iris()
+function [trainingX, trainingY, testingX, testingY, crossX, crossY] = irisFunction()
 
-fileID = fopen('iris.txt','r');
+fileID = fopen('iris.data','r');
 
 A = zeros(150, 4);
 B = zeros(150, 3);

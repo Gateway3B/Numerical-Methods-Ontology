@@ -1,8 +1,8 @@
-function wine
+function [trainingX, trainingY, testingX, testingY, crossX, crossY] = wineFunction()
     format long g
     A = zeros(178, 13);
     B = zeros(178, 3);
-    fileID = fopen('wine.txt','r');
+    fileID = fopen('wine.data','r');
     for x = 1:178
         tline = fgetl(fileID);
         C = strsplit(tline, ',');
@@ -98,4 +98,14 @@ function wine
         CrossValidationY3(counter,:) = B(x,:);
         counter = counter + 1;
     end
+
+    trainingX = cat(1, cat(1, TrainingX1, TrainingX2), TrainingX3);
+    trainingY = cat(1, cat(1, TrainingY1, TrainingY2), TrainingY3);
+
+    testingX = cat(1, cat(1, TestingX1, TestingX2), TestingX3);
+    testingY = cat(1, cat(1, TestingY1, TestingY2), TestingY3);
+
+    crossX = cat(1, cat(1, CrossValidationX1, CrossValidationX2), CrossValidationX3);
+    crossY = cat(1, cat(1, CrossValidationY1, CrossValidationY2), CrossValidationY3);
+
 end
