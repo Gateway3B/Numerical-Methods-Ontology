@@ -2,7 +2,9 @@ function bestLambda = crossValidation(trainX, trainY, crossX, crossY)
     lambdaMisses = 0;
     newLambdaMisses = 0;
     lambda = 0;
-    lambdaMisses = sum(testing(training(trainX, trainY, 0), crossX, crossY));
+    A = ones(size(trainY, 2));
+    cancelMatrix = tril(A,-1) + tril(A,-1)';
+    lambdaMisses = sum(testing(training(trainX, trainY, 0), crossX, crossY).*cancelMatrix);
     lambda = .001;
     bestLambda = 0;
     for i = 1:6
@@ -13,4 +15,5 @@ function bestLambda = crossValidation(trainX, trainY, crossX, crossY)
             bestLambda = lambda;
         end
     end
+    bestLambda
 end
