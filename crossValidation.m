@@ -15,5 +15,5 @@ function bestLambda = crossValidation(trainX, trainY, crossX, crossY)
             bestLambda = lambda;
         end
     end
-    bestLambda
+    bestLambda;
 end
