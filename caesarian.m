@@ -70,4 +70,29 @@ for x = 37:40
     CVY0(count,:) = B(x + 40,:);
     count = count + 1;
 end
+
+%Order: 1, 0
+trainingX = cat(1, TrainingX0, TrainingX1);
+trainingY = cat(1, TrainingY0, TrainingY1);
+
+testingX = cat(1, TestingX0, TestingX1);
+testingY = cat(1, TestingY0, TestingY1);
+
+crossX = cat(1, CVX0, CVX1);
+crossY = cat(1, CVY0, CVY1);
+
+for i = 1:(size(TrainingX0,1)/5)
+        rTrainingX0(i,:) = TrainingX0(i,:);
+        rTrainingY0(i,:) = TrainingY0(i,:);
+end
+
+for i = 1:(size(TestingX1,1)/5)
+        rTrainingX1(i,:) = TrainingX1(i,:);
+        rTrainingY1(i,:) = TrainingY1(i,:);
+end
+
+
+rTrainX = cat(1, rTrainingX0, rTrainingX1);
+rTrainY = cat(1, rTrainingY0, rTrainingY1);
+
 end
