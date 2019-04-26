@@ -1,4 +1,4 @@
-function [trainingX, trainingY, testingX, testingY, crossX, crossY] = wineFunction()
+function [rTrainX, rTrainY, trainingX, trainingY, testingX, testingY, crossX, crossY] = wineFunction()
     format long g
     A = zeros(178, 13);
     B = zeros(178, 3);
