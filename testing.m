@@ -10,7 +10,7 @@ function misclassifications = testing(w, x, y)
         for j = 1:size(y,2)
             testMatrix(i,j) = (w(:,j)' * x(i,:)')';
         end
-        greatest = 0;
+        greatest = -99999999;
         for j = 1:size(y,2)
             if(testMatrix(i,j) > greatest)
                 greatest = testMatrix(i,j);

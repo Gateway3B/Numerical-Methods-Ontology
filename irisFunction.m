@@ -129,7 +129,7 @@ function [rTrainX, rTrainY, trainingX, trainingY, testingX, testingY, crossX, cr
             rVirginicaTrainY(i,:) = virginicaTrainingY(i,:);
     end
     
-    for i = 1:(size(virginicaTrainingX,1)/5)
+    for i = 1:(size(versicolorTrainingX,1)/5)
             rVersicolorTrainX(i,:) = versicolorTrainingX(i,:);
             rVersicolorTrainY(i,:) = versicolorTrainingY(i,:);
     end
