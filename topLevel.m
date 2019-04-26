@@ -25,7 +25,6 @@ function t = topLevel()
     
     %fertility
     [rTrainX, rTrainY, trainX, trainY, testX, testY, crossX, crossY] = fertilityFunction();
-    trainY
     Fertility50 = testing(training(trainX, trainY, crossValidation(trainX, trainY, crossX, crossY)), testX, testY)
     misses(size(trainY,2), Fertility50);
 
