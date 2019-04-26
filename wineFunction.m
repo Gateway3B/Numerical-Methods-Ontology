@@ -108,4 +108,21 @@ function [trainingX, trainingY, testingX, testingY, crossX, crossY] = wineFuncti
     crossX = cat(1, cat(1, CrossValidationX1, CrossValidationX2), CrossValidationX3);
     crossY = cat(1, cat(1, CrossValidationY1, CrossValidationY2), CrossValidationY3);
 
+    for i = 1:(size(TrainingX1,1)/13)
+        rTrainingX1(i,:) = TrainingX1(i,:);
+        rTrainingY1(i,:) = TrainingY1(i,:);
+    end
+
+    for i = 1:(size(TrainingX2,1)/13)
+        rTrainingX2(i,:) = TrainingX2(i,:);
+        rTrainingY2(i,:) = TrainingY2(i,:);
+    end
+
+    for i = 1:(size(TrainingX3,1)/13)
+        rTrainingX3(i,:) = TrainingX3(i,:);
+        rTrainingY3(i,:) = TrainingY3(i,:);
+    end
+
+    rTrainX = cat(1, cat(1, rTrainingX1, rTrainingX2), rTrainingX3);
+    rTrainY = cat(1, cat(1, rTrainingY1, rTrainingY2), rTrainingY3);
 end
