@@ -1,4 +1,4 @@
-function fertility
+function [rTrainX, rTrainY, trainingX, trainingY, testingX, testingY, crossX, crossY] = fertility
 
     A = zeros(100, 9);
     B = zeros(100, 2);
@@ -73,4 +73,29 @@ for x = 12:12
     CVYO(count,:) = B(x + 88,:);
     count = count + 1;
 end
+
+
+%Order: N, O
+trainingX = cat(1, TrainingXO, TrainingXN);
+trainingY = cat(1, TrainingYO, TrainingYN);
+
+testingX = cat(1, TestingXO, TestingXN);
+testingY = cat(1, TestingYO, TestingYN);
+
+crossX = cat(1, CVXO, CVXN);
+crossY = cat(1, CVYO, CVYN);
+
+for i = 1:(size(TrainingX0,1)/9)
+        rTrainingXO(i,:) = TrainingXO(i,:);
+        rTrainingYO(i,:) = TrainingYO(i,:);
+end
+
+for i = 1:(size(TestingX1,1)/9)
+        rTrainingXN(i,:) = TrainingXN(i,:);
+        rTrainingYN(i,:) = TrainingYN(i,:);
+end
+
+
+rTrainX = cat(1, rTrainingXO, rTrainingXN);
+rTrainY = cat(1, rTrainingYO, rTrainingYN);
 end
